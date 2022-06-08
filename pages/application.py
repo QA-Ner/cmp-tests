@@ -2,7 +2,7 @@ import logging
 import allure
 from playwright.sync_api import Browser
 from playwright.sync_api import Request, Route, ConsoleMessage, Dialog
-from pages.sign_up_in import SignInUpPage
+from pages.sign_inup_resetp import SignInUpPage
 from pages.iaas import IaaS
 from settings import DEFAULT_TIMEOUT
 from contextlib import contextmanager
@@ -16,7 +16,7 @@ class App:
         self.page = self.context.new_page()
         self.page1 = self.context.new_page()
         self.base_url = base_url
-        self.sign_in_up = SignInUpPage(self.page)
+        self.sign_inup_resetp = SignInUpPage(self.page)
         self.iaas_page = IaaS(self.page, self.page1)
 
         def console_handler(message: ConsoleMessage):
