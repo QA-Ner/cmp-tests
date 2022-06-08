@@ -1,3 +1,6 @@
+# npm install -g npm@8.12.1
+# playwright install
+
 requests==2.25.1
 pytest==7.1.2
 allure-pytest==2.9.45
@@ -16,6 +19,3 @@ pytest-xdist
 # TestRail
 pytest-testrail==2.9.0 ### Locally patched https://github.com/allankp/pytest-testrail/pull/147/files ###
 
-
-# npm install -g npm@8.12.1
-# playwright install

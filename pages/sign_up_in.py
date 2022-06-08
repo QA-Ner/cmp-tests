@@ -23,6 +23,6 @@ class SignInUpPage:
             self.page.locator(self.continue_button).click()
 
     @allure.step
-    def get_url(self):
+    def current_url(self):
         current_url = self.page.url
         return current_url
