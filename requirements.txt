@@ -1,5 +1,21 @@
-playwright
-pytest
-allure-pytest
-requests
+requests==2.25.1
+pytest==7.1.2
+allure-pytest==2.9.45
+playwright==1.21.0
+pytest-playwright==0.3.0
 
+# Extra requirements
+ipython==7.19.0
+ipdb==0.13.4
+black==20.8b1
+pytest-sugar
+
+# Parallelization
+pytest-xdist
+
+# TestRail
+pytest-testrail==2.9.0 ### Locally patched https://github.com/allankp/pytest-testrail/pull/147/files ###
+
+
+# npm install -g npm@8.12.1
+# playwright install

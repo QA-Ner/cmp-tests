@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
 
 #folders
 .idea/
@@ -9,10 +10,20 @@ __pycache__/
 
 # reporting
 report/
+reports/
 report.xml
 
 # logs
 *.log
 
-# secure info
-#secure.json
+storybook-static/
+/test-results/
+/playwright-report/
+/playwright/.cache/
+.env.playwright
+
+# Credentials
+.*.json
+.credentials.json
+.testrail.cfg
+.generated_user.json

@@ -1,0 +1,12 @@
+[API]
+url = https://tr.onappdev.com/testrail/
+email =
+password =
+[TESTRUN]
+assignedto_id = 4
+project_id = 7
+suite_id = 7
+;plan_id = 4
+description = 'This is an example description'
+[TESTCASE]
+custom_comment = 'This is a custom comment'

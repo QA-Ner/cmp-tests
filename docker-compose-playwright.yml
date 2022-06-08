@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.22.2-focal
+    user: root
+    working_dir: /app
+    volumes:
+      - .:/app
+    environment:
+      - CI=true
+    command: npm run test:e2e
