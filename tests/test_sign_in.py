@@ -16,4 +16,3 @@ def test_sign_in(cmp_app):
     cmp_app.sign_inup_resetp.login_as(email, password)
     cmp_app.iaas_page.breadcrumbs_h1("Infrastructure / IaaS")
     assert 'engines' in cmp_app.sign_inup_resetp.current_url()
-
