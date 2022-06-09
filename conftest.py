@@ -38,7 +38,7 @@ def get_playwright():
         yield playwright
 
 
-@fixture(scope='session', params=['chromium'])
+@fixture(scope='session', params=['chromium', 'firefox', 'webkit'])
 def get_browser(get_playwright, request):
     browser = request.param
     # save browser type to env variable so fixtures and tests can get current browser
@@ -64,7 +64,7 @@ def get_browser(get_playwright, request):
     del os.environ['PWBROWSER']
 
 
-@fixture(scope='session')
+@fixture(scope='class')
 def cmp_app(get_browser, request):
     """
     Fixture of playwright for non autorised tests
@@ -76,7 +76,7 @@ def cmp_app(get_browser, request):
     app.close()
 
 
-@fixture(scope='session')
+@fixture(scope='class')
 def cmp_app_auth(cmp_app, request):
     secure = request.config.getoption('--secure')
     config = load_config(request.session.fspath.strpath, secure)

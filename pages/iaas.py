@@ -3,7 +3,7 @@ from playwright.sync_api import Page, expect
 
 
 class IaaS:
-    def __init__(self, page: Page, page1: Page):
+    def __init__(self, page: Page, page1=None):
         self.page = page
         self.page1 = page1
         self.engines_page_breadcrumbs = "[data-testid=\"engines-page-breadcrumbs-h1\"]"
@@ -14,9 +14,10 @@ class IaaS:
         expect(self.page.locator(self.engines_page_breadcrumbs)).to_have_text(text)
 
     @allure.step
-    def go_to_vhi_engine(self, engine: str, vhi_username: str):
+    def go_to_vhi_engine(self, engine: str, vhi_username: str, page1):
         with self.page.expect_popup() as popup_info:
             self.page.locator(f"text={engine}").click()
+        self.page1 = page1
         self.page1 = popup_info.value
         with self.page1.expect_navigation():
             self.page1.locator("button:has-text(\"Sign in with CMP\")").click()

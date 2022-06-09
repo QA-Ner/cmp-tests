@@ -14,10 +14,11 @@ class App:
         self.context = self.browser.new_context(**kwargs)
         self.context.set_default_timeout(DEFAULT_TIMEOUT)
         self.page = self.context.new_page()
-        self.page1 = self.context.new_page()
+        #self.page1 = self.context.new_page()
         self.base_url = base_url
         self.sign_inup_resetp = SignInUpPage(self.page)
-        self.iaas_page = IaaS(self.page, self.page1)
+        #self.iaas_page = IaaS(self.page, self.page1)
+        self.iaas_page = IaaS(self.page)
 
         def console_handler(message: ConsoleMessage):
             if message.type == 'error':
@@ -36,6 +37,12 @@ class App:
             self.page.goto(self.base_url + endpoint)
         else:
             self.page.goto(endpoint)
+
+    @allure.step
+    def page1(self):
+        page1 = self.context.new_page()
+        return page1
+
 
     @allure.step
     def navigate_to(self, menu: str):
